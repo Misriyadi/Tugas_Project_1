@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+    a(href='/user') Home
+    div
+        form(method='post' action='/update_user')
+            input(type='hidden' name='id' value='#{user.id}')
+            p Nama :
+            input(type='text' name='first_name' value='#{user.full_name}')
+            p Password :
+            input(type='text' name='password' value='#{user.password}')
+
+            button(type='submit') Update

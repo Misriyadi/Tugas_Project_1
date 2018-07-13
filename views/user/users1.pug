@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1= title
+        a(href='/new_users1') Add New User ||
+            a(href='/index') Logout
+    div
+        table(border='1')
+            thead
+                th ID
+                th First Name
+                th Last Name
+                th Email
+                th Password
+                th Action
+            tbody
+                each s in users
+                    tr
+                        td #{s.id}
+                        td #{s.first_name}
+                        td #{s.last_name}
+                        td #{s.email}
+                        td #{s.password}
+                            td #[a(href='/user_detail/'+s.id) Detail] | #[a(href='/update_user/'+s.id) Edit] | #[a(href='/delete_user/'+s.id) Delete]
+
+

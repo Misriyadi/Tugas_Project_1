@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1= title
+    a(href='/index') Home
+    div
+        form(method='post' action='/save_user')
+            p ID :
+            input(type='text' name='id')
+            p Firts Name :
+                input(type='text' name='first_name')
+            p Last Name :
+                input(type='text' name='last_name')
+            p Email :
+            input(type='text' name='email')
+            p Password :
+            input(type='text' name='password')
+            p Created :
+            input(type='text' name='created')
+            button(type='submit') Save
